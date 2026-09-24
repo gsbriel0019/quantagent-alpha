@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quantagent-alpha"
+version = "1.0.0"
+description = "Hybrid Multi-Agent Quantitative Intelligence, Macro Sentiment & Institutional Investment Thesis Engine"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Gabriel Proaño", email = "162929814+gsbriel0019@users.noreply.github.com" }
+]
+keywords = [
+    "quantitative-finance",
+    "multi-agent-system",
+    "investment-thesis",
+    "technical-analysis",
+    "fibonacci",
+    "macroeconomics",
+    "risk-management",
+    "fastapi",
+    "streamlit"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --cov=src --cov-report=term-missing"
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.coverage.run]
+source = ["src"]
+omit = ["tests/*", "app/streamlit_app.py"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
